@@ -10,7 +10,6 @@ export default (req, res) => {
 	var spotifyApi = new SpotifyWebApi({
 		clientId: clientId,
 		clientSecret: clientSecret,
-		refreshToken: refreshToken,
 	});
 
 	console.log(req.query);

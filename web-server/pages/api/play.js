@@ -18,12 +18,12 @@ export default (req, res) => {
 			spotifyApi.transferMyPlayback(req.query.id).then(
 				function() {
 					console.log('Transfering playback to ' + req.query.id);
-					spotifyApi.play({uris: [`spotify:track:${req.query.song}``]}).then(
+					spotifyApi.play({ uris: [`spotify:track:${req.query.song}`] }).then(
 						function() {
 							console.log('Now playing ' + req.query.song);
 							spotifyApi.setRepeat('track').then(
 								function() {
-									console.log('Now looping'.);
+									console.log('Now looping.');
 								},
 								function(err) {
 									console.log('Loop command failed.');
