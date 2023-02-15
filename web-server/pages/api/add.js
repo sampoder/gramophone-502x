@@ -19,6 +19,17 @@ export default (req, res) => {
 		function(data) {
 			console.log('The access token has been refreshed!');
 			spotifyApi.setAccessToken(data.body['access_token']);
+			spotifyApi.getMyDevices().then(
+				function(data) {
+					console.log('The device list is here!');
+					res.json(data);
+				},
+				function(err) {
+					console.log(err);
+					console.log('Device list failed.');
+					res.send('🐛');
+				}
+			);
 			spotifyApi.searchTracks(`track:${req.query.song} ${req.query.artist[1] ? 'artist:' + req.query.artist : ''}`).then(
 				function(data) {
 					if (!data.body.tracks.items[0]) {
