@@ -56,6 +56,7 @@ export default (req, res) => {
 		},
 		function(err) {
 			console.log('Auth failed.');
+			console.log(err);
 			res.redirect('/bug');
 		}
 	);
