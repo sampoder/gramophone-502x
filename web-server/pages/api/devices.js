@@ -21,12 +21,14 @@ export default (req, res) => {
 					res.json(data);
 				},
 				function(err) {
+					console.log(err);
 					console.log('Device list failed.');
 					res.send('🐛');
 				}
 			);
 		},
 		function(err) {
+			console.log(err);
 			console.log('Auth failed.');
 			res.send('🐛');
 		}
