@@ -15,29 +15,23 @@ export default (req, res) => {
 		function(data) {
 			console.log('The access token has been refreshed!');
 			spotifyApi.setAccessToken(data.body['access_token']);
-			spotifyApi.transferMyPlayback(req.query.id).then(
+			console.log([req.query.id]);
+			spotifyApi.play({ uris: [`spotify:track:${req.query.song}`], device_id: req.query.id }).then(
 				function() {
-					console.log('Transfering playback to ' + req.query.id);
-					spotifyApi.play({ uris: [`spotify:track:${req.query.song}`] }).then(
+					console.log('Now playing ' + req.query.song);
+					spotifyApi.setRepeat('track').then(
 						function() {
-							console.log('Now playing ' + req.query.song);
-							spotifyApi.setRepeat('track').then(
-								function() {
-									console.log('Now looping.');
-								},
-								function(err) {
-									console.log('Loop command failed.');
-									res.send('🐛');
-								}
-							);
+							console.log('Now looping.');
+							res.send('Now looping.');
 						},
 						function(err) {
-							console.log('Play command failed.');
+							console.log('Loop command failed.');
 							res.send('🐛');
 						}
 					);
 				},
 				function(err) {
+					console.log(err);
 					console.log('Transfer failed.');
 					res.send('🐛');
 				}
