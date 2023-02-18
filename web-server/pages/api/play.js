@@ -16,7 +16,7 @@ export default (req, res) => {
 			console.log('The access token has been refreshed!');
 			spotifyApi.setAccessToken(data.body['access_token']);
 			console.log([req.query.id]);
-			spotifyApi.play({ uris: [`spotify:track:${req.query.song}`], device_id: req.query.id }).then(
+			spotifyApi.play({ device_id: req.query.id, ...(req.query.id ? { uris: [`spotify:track:${req.query.song}`] } : {}) }).then(
 				function() {
 					console.log('Now playing ' + req.query.song);
 					spotifyApi.setRepeat('track').then(
