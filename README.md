@@ -20,7 +20,7 @@ The shell will be 3D-printed and laser cut at @arshshrivastavaa's school. We'll 
 
 ### The Electronics
 
-Gramophone-502x will read embedded NFC tags to know which song to play when. Gramophone-502x will be connected to Spotify through a NodeMCU. For now, we'll play the songs on Spotify through a pre-owned Google Home Mini. A motor will "spin" the record. 
+Gramophone-502x will read embedded NFC tags to know which song to play when. Gramophone-502x will be connected to Spotify through a NodeMCU. For now, we'll play the songs on Spotify through a pre-owned Google Home Mini. A motor will "spin" the record.
 
 Lastly, inspired by [@amhenikoff](https://github.com/amhenikoff) & [@phultquist](https://github.com/phultquist)'s [Frame](https://github.com/phultquist/frame) project from SoM, we're going to look into creating a RGB-mode for Gramophone-502x.
 
@@ -30,18 +30,18 @@ Honestly, making the records is going to require a bit of experimentation! Our c
 
 ## Budget
 
-| Product         | Supplier/Link                                                   | Cost    |
-| --------------- | -------------------------------------                           | ------- |
-| NodeMCU         | https://sg.cytron.io/p-nodemcu-esp32                            | $8.00   |
-| 4 x WS2812B     | https://sg.cytron.io/p-ws2812b-neopixel-8x32-led-panel-256-led  | $118.07 |
-| 25mm NFC Tags   | https://hack.af/a-2d4SR                                         | $31.13  |
-| 4 x Brush Motor | https://sg.cytron.io/p-3v-miniature-brush-motor-with-wire-leads | $2.00   |
-| Filament        | Purchased from @arshshrivastavaa's school.                      | $25.00  |
-| Wood            | Purchased from @arshshrivastavaa's school.                      | $25.00  |
-| Assorted Circuit Components | To be purchased (as needed) from Sim Lim Square.    | $30.00  |
-| Resin           | https://hack.af/ZroLe8u                                         | $28.06  |
-| Silicone Rubber | https://hack.af/jEHFLNG                                         | $50.00  |
-| PyPortal Titano | https://www.adafruit.com/product/4444 (incl. shipping)          | $80.00  |
-| Total           |                                                                 | $398.00 |
+| Product                     | Supplier/Link                                                   | Cost    |
+| --------------------------- | --------------------------------------------------------------- | ------- |
+| NodeMCU                     | https://sg.cytron.io/p-nodemcu-esp32                            | $8.00   |
+| 4 x WS2812B                 | https://sg.cytron.io/p-ws2812b-neopixel-8x32-led-panel-256-led  | $118.07 |
+| 25mm NFC Tags               | https://hack.af/a-2d4SR                                         | $31.13  |
+| 4 x Brush Motor             | https://sg.cytron.io/p-3v-miniature-brush-motor-with-wire-leads | $2.00   |
+| Filament                    | Purchased from @arshshrivastavaa's school.                      | $25.00  |
+| Wood                        | Purchased from @arshshrivastavaa's school.                      | $25.00  |
+| Assorted Circuit Components | To be purchased (as needed) from Sim Lim Square.                | $30.00  |
+| Resin                       | https://hack.af/ZroLe8u                                         | $28.06  |
+| Silicone Rubber             | https://hack.af/jEHFLNG                                         | $50.00  |
+| PyPortal Titano             | https://www.adafruit.com/product/4444 (incl. shipping)          | $80.00  |
+| Total                       |                                                                 | $398.00 |
 
 ![](https://cloud-2ilchhefm-hack-club-bot.vercel.app/04psubjgaknc11.jpg)

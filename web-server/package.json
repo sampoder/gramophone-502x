@@ -8,9 +8,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "9.5.4",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "@vercel/og": "^0.1.0",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "spotify-web-api-node": "^4.0.0"
   }
 }
