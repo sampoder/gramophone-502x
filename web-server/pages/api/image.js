@@ -19,6 +19,75 @@ const semibold = fetch(new URL("../../lib/semibold.ttf", import.meta.url)).then(
 export default async function (req, res) {
   const boldData = await bold;
   const mediumData = await medium;
+  if(req.nextUrl.searchParams.get("name") == "none"){
+    return new ImageResponse(
+      (
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "100%",
+            gap: "8px",
+            background: "black",
+            color: "white",
+            backgroundImage:
+              backgrounds[Math.floor(Math.random() * backgrounds.length)],
+          }}
+        >
+        <div style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "50px",
+          gap: "4px",
+          color: "white",
+          paddingBottom: '35px'
+        }}>
+          <p
+            style={{
+              fontSize: 25,
+              fontFamily: "Phantom Sans Bold",
+              textAlign: 'center',
+              height: '25px'
+            }}
+          >
+            Place a record on
+          </p>
+          <p
+            style={{
+              fontSize: 25,
+              fontFamily: "Phantom Sans Bold",
+              textAlign: 'center',
+              height: '25px'
+            }}
+          >
+            Gramophone-502x to play a song.
+          </p></div>
+        </div>
+      ),
+      {
+        width: 480,
+        height: 320,
+        fonts: [
+          {
+            name: "Phantom Sans Bold",
+            data: boldData,
+            style: "bold",
+          },
+          {
+            name: "Phantom Sans Medium",
+            data: mediumData,
+            style: "normal",
+          },
+        ],
+      }
+    );
+  }
   return new ImageResponse(
     (
       <div

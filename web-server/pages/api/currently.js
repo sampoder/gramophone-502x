@@ -23,20 +23,19 @@ export default async (req, res) => {
     }
   );
 
-  await spotifyApi.getArtistAlbums("43ZHCT0cAZBISjO8DG9PnE").then(
-    function (data) {
-      console.log("Artist albums", data.body);
-    },
-    function (err) {
-      console.error(err);
-    }
-  );
-
   spotifyApi.getMyCurrentPlayingTrack().then(
     function (data) {
-      res.redirect(
-        `/api/image?name=${data.body.item.name}&image=${data.body.item.album.images[0].url}&artist=${data.body.item.artists[0].name}`
-      );
+      try {
+        return res.redirect(
+          `/api/image?name=${data.body.item.name}&image=${data.body.item.album.images[0].url}&artist=${data.body.item.artists[0].name}`
+        );
+      }
+      catch (e){
+        console.error(e)
+        return res.redirect(
+          `/api/image?name=none`
+        );
+      }
     },
     function (err) {
       console.log(err);
