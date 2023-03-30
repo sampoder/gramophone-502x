@@ -26,7 +26,7 @@ export default async (req, res) => {
   spotifyApi.getMyCurrentPlayingTrack().then(
     function (data) {
       try {
-        return res.send(data.body.item.name + `\n` + data.body.item.artists[0].name);
+        return res.send(data.body.item.name + `\n ` + data.body.item.artists[0].name);
       }
       catch (e){
         console.error(e)
