@@ -26,15 +26,11 @@ export default async (req, res) => {
   spotifyApi.getMyCurrentPlayingTrack().then(
     function (data) {
       try {
-        return res.json([encodeURIComponent(
-          `https://gramophone-502x.vercel.app/api/image?name=${data.body.item.name}&image=${data.body.item.album.images[0].url}&artist=${data.body.item.artists[0].name}`
-        )]);
+        return res.json([data.body.item.name]);
       }
       catch (e){
         console.error(e)
-        return res.json([encodeURIComponent(
-          `https://gramophone-502x.vercel.app/api/image?name=none`
-        )]);
+        return res.json(["Nothing..."]);
       }
     },
     function (err) {
